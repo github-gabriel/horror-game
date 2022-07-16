@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4322198405856398782}
   - component: {fileID: 4322198405856398783}
-  - component: {fileID: 1917857356179076047}
   m_Layer: 0
   m_Name: LocalPlayer
   m_TagString: Untagged
@@ -47,21 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366e0c9f42f44c14ea4f3aa0248047d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationManager: {fileID: 0}
-  camTransform: {fileID: 8925959137717338437}
---- !u!114 &1917857356179076047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4322198405856398777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74faebf131b4ba747a961f89e1cd4b9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camTransform: {fileID: 8925959137717338437}
 --- !u!1 &4322198405901675719
 GameObject:
   m_ObjectHideFlags: 0
