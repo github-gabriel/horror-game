@@ -1,3 +1,1 @@
 # Horror Game
-
-Test
