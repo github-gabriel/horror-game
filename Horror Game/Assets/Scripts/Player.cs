@@ -1,68 +1,87 @@
-using RiptideNetworking;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviourPunCallbacks
 {
-    public static Dictionary<ushort, Player> list = new Dictionary<ushort, Player>();
+    CharacterController characterController;
 
-    public ushort Id { get; private set; }
-    public bool IsLocal { get; private set; }
+    public float gravity = -9.81f;
+    public float jumpHeight = 3f;
 
-    [SerializeField] private PlayerAnimationManager animationManager;
-    [SerializeField] private Transform camTransform;
+    public float speed;
+    public float normalSpeed = 12f;
+    public float sprintingSpeed = 17f;
 
-    private string username;
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
 
-    private void OnDestroy()
+    Vector3 velocity;
+    bool isGrounded;
+
+    public float crouchingHeight = 1.25f;
+    public float standingHeight;
+
+    public GameObject playerCamera;
+
+    public override void OnEnable()
     {
-        list.Remove(Id);
-    }
-
-    private void Move(Vector3 newPosition, Vector3 forward)
-    {
-        transform.position = newPosition;
-        
-        if (!IsLocal)
+        if (photonView.IsMine)
         {
-            camTransform.forward = forward;
-            // animationManager.AnimateBasedOnSpeed();
-        }
-    }
-
-    public static void Spawn(ushort id, string username, Vector3 position)
-    {
-        Player player;
-        if (id == NetworkManager.Singleton.Client.Id)
-        {
-            player = Instantiate(GameLogic.Singleton.LocalPlayerPrefab, position, Quaternion.identity).GetComponent<Player>();
-            player.IsLocal = true;
+            characterController = GetComponent<CharacterController>();
         }
         else
         {
-            player = Instantiate(GameLogic.Singleton.PlayerPrefab, position, Quaternion.identity).GetComponent<Player>();
-            player.IsLocal = false;
+            playerCamera.SetActive(false);
         }
-
-        player.name = $"Player {id} (username)";
-        player.Id = id;
-        player.username = username;
-
-        list.Add(id, player);
     }
 
-    #region Messages
-    [MessageHandler((ushort)ServerToClientId.playerSpawned)]
-    private static void SpawnPlayer(Message message)
+    void Update()
     {
-        Spawn(message.GetUShort(), message.GetString(), message.GetVector3());
-    }
+        if (photonView.IsMine) // Lokaler Client
+        {
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-    [MessageHandler((ushort)ServerToClientId.playerMovement)]
-    private static void PlayerMovement(Message message)
-    {
-        if (list.TryGetValue(message.GetUShort(), out Player player))
-            player.Move(message.GetVector3(), message.GetVector3());
+            if (isGrounded && velocity.y < 0)
+            {
+                velocity.y = -2f;
+            }
+
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+
+            Vector3 move = transform.right * x + transform.forward * z;
+
+            characterController.Move(move * speed * Time.deltaTime);
+
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            }
+
+            velocity.y += gravity * Time.deltaTime;
+
+            characterController.Move(velocity * Time.deltaTime);
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                Debug.Log("Sprinting");
+                speed = sprintingSpeed;
+            }
+            else
+            {
+                speed = normalSpeed;
+            }
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                Debug.Log("Crouching");
+                characterController.height = crouchingHeight;
+            }
+            else
+            {
+                characterController.height = standingHeight;
+            }
+        }
     }
-    #endregion
 }
