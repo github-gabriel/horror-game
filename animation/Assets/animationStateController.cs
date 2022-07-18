@@ -33,67 +33,73 @@ private int isIdleHash;
         bool leftpressed = Input.GetKey("a");
         bool rightpressed = Input.GetKey("d");
         bool backpressed = Input.GetKey("s");
-        
-        
-        if (!isWalking && forwardPressed)
-        {
-            animator.SetBool(isWalkingHash, true);
-        }
-        
-        if (isWalking && !forwardPressed)
-        {
-            animator.SetBool(isWalkingHash, false);
-        }
 
-        if (!isRunning && (forwardPressed && runPressed))
+        if (forwardPressed && backpressed)
         {
-            animator.SetBool(isRunningHash, true);
+            animator.SetBool(isIdleHash, true);
         }
-        if ( isRunning && (!forwardPressed || !runPressed))
+        else
         {
-            animator.SetBool(isRunningHash, false);
-        }
-        if ( isWalking && (forwardPressed && rightpressed))
-        {
-            animator.SetBool("isRight", true);
-        }
-        if ( isWalking && (!forwardPressed || !rightpressed ))
-        {
-            animator.SetBool("isRight", false);
-        }
-        if ( isWalking && (forwardPressed && leftpressed))
-        {
-            animator.SetBool("isLeft", true);
-        }
-        if ( isWalking && (!forwardPressed || !leftpressed ))
-        {
-            animator.SetBool("isLeft", false);
-        }
-        if (!isBackwards && backpressed)
-        {
-            animator.SetBool(isBackHash, true);
-        }
+            if (!isWalking && forwardPressed)
+            {
+                animator.SetBool(isWalkingHash, true);
+            }
         
-        if ( isBackwards && !backpressed)
-        {
-            animator.SetBool(isBackHash, false);
-        }
+            if (isWalking && !forwardPressed)
+            {
+                animator.SetBool(isWalkingHash, false);
+            }
 
-        if (!isWalking && !forwardPressed && !isRunning && rightpressed)
-        {
-            animator.SetBool("isRight", true);
-        }
-        if (!isWalking && !forwardPressed && !isRunning && !rightpressed)
-        {
-            animator.SetBool("isRight", false);
-        }
-        if (!isWalking && !forwardPressed && !isRunning && leftpressed)
-        {
-            animator.SetBool("isLeft", true);
-        }
-        if (!isWalking && !forwardPressed && !isRunning && !leftpressed)
-        {
-            animator.SetBool("isLeft", false);
+            if (!isRunning && (forwardPressed && runPressed))
+            {
+                animator.SetBool(isRunningHash, true);
+            }
+            if ( isRunning && (!forwardPressed || !runPressed))
+            {
+                animator.SetBool(isRunningHash, false);
+            }
+            if ( isWalking && (forwardPressed && rightpressed))
+            {
+                animator.SetBool("isRight", true);
+            }
+            if ( isWalking && (!forwardPressed || !rightpressed ))
+            {
+                animator.SetBool("isRight", false);
+            }
+            if ( isWalking && (forwardPressed && leftpressed))
+            {
+                animator.SetBool("isLeft", true);
+            }
+            if ( isWalking && (!forwardPressed || !leftpressed ))
+            {
+                animator.SetBool("isLeft", false);
+            }
+            if (!isBackwards && backpressed)
+            {
+                animator.SetBool(isBackHash, true);
+            }
+        
+            if ( isBackwards && !backpressed)
+            {
+                animator.SetBool(isBackHash, false);
+            }
+
+            if (!isWalking && !forwardPressed && !isRunning && rightpressed)
+            {
+                animator.SetBool("isRight", true);
+            }
+            if (!isWalking && !forwardPressed && !isRunning && !rightpressed)
+            {
+                animator.SetBool("isRight", false);
+            }
+            if (!isWalking && !forwardPressed && !isRunning && leftpressed)
+            {
+                animator.SetBool("isLeft", true);
+            }
+            if (!isWalking && !forwardPressed && !isRunning && !leftpressed)
+            {
+                animator.SetBool("isLeft", false);
+            }
         }
 
     }
