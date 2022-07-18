@@ -8,6 +8,8 @@ Animator animator;
 
 private int isRunningHash;
 private int isWalkingHash;
+private int isBackHash;
+private int isIdleHash;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,8 @@ private int isWalkingHash;
         Debug.Log(animator);
         isWalkingHash = Animator.StringToHash("isWalking");
         isRunningHash = Animator.StringToHash("isRunning");
-
+        isBackHash = Animator.StringToHash("isBackwards");
+        isIdleHash = Animator.StringToHash("isIdle");
     }
 
     // Update is called once per frame
@@ -23,10 +26,14 @@ private int isWalkingHash;
     {
         bool isRunning = animator.GetBool(isRunningHash);
         bool isWalking = animator.GetBool(isWalkingHash);
+        bool isBackwards = animator.GetBool(isBackHash);
+        bool isIdle = animator.GetBool(isIdleHash);
         bool forwardPressed = Input.GetKey("w");
         bool runPressed = Input.GetKey("left shift");
         bool leftpressed = Input.GetKey("a");
         bool rightpressed = Input.GetKey("d");
+        bool backpressed = Input.GetKey("s");
+        
         
         if (!isWalking && forwardPressed)
         {
@@ -62,5 +69,32 @@ private int isWalkingHash;
         {
             animator.SetBool("isLeft", false);
         }
+        if (!isBackwards && backpressed)
+        {
+            animator.SetBool(isBackHash, true);
+        }
+        
+        if ( isBackwards && !backpressed)
+        {
+            animator.SetBool(isBackHash, false);
+        }
+
+        if (!isWalking && !forwardPressed && !isRunning && rightpressed)
+        {
+            animator.SetBool("isRight", true);
+        }
+        if (!isWalking && !forwardPressed && !isRunning && !rightpressed)
+        {
+            animator.SetBool("isRight", false);
+        }
+        if (!isWalking && !forwardPressed && !isRunning && leftpressed)
+        {
+            animator.SetBool("isLeft", true);
+        }
+        if (!isWalking && !forwardPressed && !isRunning && !leftpressed)
+        {
+            animator.SetBool("isLeft", false);
+        }
+
     }
 }
