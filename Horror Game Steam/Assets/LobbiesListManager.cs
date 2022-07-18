@@ -68,4 +68,12 @@ public class LobbiesListManager : MonoBehaviour
         listOfLobbies.Clear();
     }
 
+    public void BackButton()
+    {
+        lobbiesButton.SetActive(true);
+        hostButton.SetActive(true);
+        
+        lobbiesMenu.SetActive(false);
+    }
+
 }
