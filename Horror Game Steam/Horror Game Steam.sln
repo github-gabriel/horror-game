@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Components", "Mirror
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telepathy", "Telepathy.csproj", "{77668645-742d-6ea7-c3b0-56a6baf4555c}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kcp2k", "kcp2k.csproj", "{641330b7-69ec-e611-3569-c9ff3dec6f63}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{24cbf176-f4fc-c627-c8ff-dbc04eebedb6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kcp2k", "kcp2k.csproj", "{641330b7-69ec-e611-3569-c9ff3dec6f63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "where-allocations", "where-allocations.csproj", "{fc6aacbd-a80d-9165-c996-f03b466c8b50}"
 EndProject
@@ -36,10 +36,10 @@ Global
 		{8f01e894-10ec-a3bd-024d-5d475877a859}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77668645-742d-6ea7-c3b0-56a6baf4555c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77668645-742d-6ea7-c3b0-56a6baf4555c}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{641330b7-69ec-e611-3569-c9ff3dec6f63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{641330b7-69ec-e611-3569-c9ff3dec6f63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24cbf176-f4fc-c627-c8ff-dbc04eebedb6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{24cbf176-f4fc-c627-c8ff-dbc04eebedb6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{641330b7-69ec-e611-3569-c9ff3dec6f63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{641330b7-69ec-e611-3569-c9ff3dec6f63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{fc6aacbd-a80d-9165-c996-f03b466c8b50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{fc6aacbd-a80d-9165-c996-f03b466c8b50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41d2e856-a7dd-c175-c33e-9d45c483cfd1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

@@ -32,6 +32,8 @@ public class LobbiesListManager : MonoBehaviour
         hostButton.SetActive(false);
         
         lobbiesMenu.SetActive(true);
+        
+        SteamLobby.Instance.GetLobbiesList();
     }
 
     public void DisplayLobbies(List<CSteamID> lobbyIDs, LobbyDataUpdate_t result)
@@ -40,7 +42,7 @@ public class LobbiesListManager : MonoBehaviour
         {
             if (lobbyIDs[i].m_SteamID == result.m_ulSteamIDLobby)
             {
-                GameObject createdItem = Instantiate(lobbyDataItemPrefab);
+                GameObject createdItem = Instantiate(lobbyDataItemPrefab, lobbyListContent.transform);
 
                 createdItem.GetComponent<LobbyDataEntry>().lobbyID = (CSteamID)lobbyIDs[i].m_SteamID;
 
@@ -49,9 +51,8 @@ public class LobbiesListManager : MonoBehaviour
                 
                 createdItem.GetComponent<LobbyDataEntry>().SetLobbyData();
                 
-                createdItem.transform.SetParent(lobbyListContent.transform);
-                createdItem.transform.localPosition = Vector3.one;
-                
+                createdItem.transform.localScale = Vector3.one;
+
                 listOfLobbies.Add(createdItem);
             }
         }

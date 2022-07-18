@@ -2,7 +2,9 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CustomNetworkManager
+    - LobbiesListManager
     - LobbyController
+    - LobbyDataEntry
     - PlayerController
     - PlayerListItem
     - PlayerMovement
@@ -35,6 +37,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
   serializedClasses:
+    Mirror:
+    - Steamworks.CSteamID
     UnityEngine.CoreModule:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
@@ -51,6 +55,12 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Scrollbar/ScrollEvent
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: LobbyDataEntry
+    methodName: JoinLobby
+  - assembly: Assembly-CSharp
+    fullTypeName: LobbiesListManager
+    methodName: GetListOfLobbies
   - assembly: Assembly-CSharp
     fullTypeName: SteamLobby
     methodName: HostLobby
@@ -118,33 +128,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1538}
     - Class: 114
-      Script: {instanceID: 2388}
+      Script: {instanceID: 2390}
     - Class: 114
-      Script: {instanceID: 2716}
+      Script: {instanceID: 2718}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 3206}
+      Script: {instanceID: 3210}
     - Class: 114
-      Script: {instanceID: 3282}
+      Script: {instanceID: 3286}
     - Class: 114
-      Script: {instanceID: 3498}
+      Script: {instanceID: 3502}
     - Class: 114
-      Script: {instanceID: 4180}
+      Script: {instanceID: 4186}
     - Class: 114
-      Script: {instanceID: 5838}
+      Script: {instanceID: 5844}
     - Class: 114
-      Script: {instanceID: 6194}
+      Script: {instanceID: 6200}
     - Class: 114
-      Script: {instanceID: 6394}
+      Script: {instanceID: 6400}
     - Class: 114
-      Script: {instanceID: 6738}
+      Script: {instanceID: 6744}
     - Class: 114
-      Script: {instanceID: 6750}
+      Script: {instanceID: 6756}
     - Class: 114
-      Script: {instanceID: 7216}
+      Script: {instanceID: 7222}
     - Class: 114
-      Script: {instanceID: 7952}
+      Script: {instanceID: 7958}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -191,33 +201,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1538}
     - Class: 114
-      Script: {instanceID: 2716}
+      Script: {instanceID: 1858}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2718}
     - Class: 114
-      Script: {instanceID: 3282}
+      Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 3694}
+      Script: {instanceID: 3174}
     - Class: 114
-      Script: {instanceID: 4160}
+      Script: {instanceID: 3286}
     - Class: 114
-      Script: {instanceID: 4704}
+      Script: {instanceID: 3502}
     - Class: 114
-      Script: {instanceID: 5838}
+      Script: {instanceID: 3652}
     - Class: 114
-      Script: {instanceID: 6194}
+      Script: {instanceID: 3700}
     - Class: 114
-      Script: {instanceID: 6738}
+      Script: {instanceID: 4166}
     - Class: 114
-      Script: {instanceID: 7428}
+      Script: {instanceID: 4186}
     - Class: 114
-      Script: {instanceID: 7800}
+      Script: {instanceID: 4710}
     - Class: 114
-      Script: {instanceID: 8156}
+      Script: {instanceID: 5844}
     - Class: 114
-      Script: {instanceID: 8404}
+      Script: {instanceID: 6200}
     - Class: 114
-      Script: {instanceID: 36922}
+      Script: {instanceID: 6744}
+    - Class: 114
+      Script: {instanceID: 6756}
+    - Class: 114
+      Script: {instanceID: 7222}
+    - Class: 114
+      Script: {instanceID: 7434}
+    - Class: 114
+      Script: {instanceID: 7806}
+    - Class: 114
+      Script: {instanceID: 7958}
+    - Class: 114
+      Script: {instanceID: 8162}
+    - Class: 114
+      Script: {instanceID: 8410}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -297,6 +321,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionStayMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 49e944469f98a4bbf7ce618a91df35c6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LobbyDataEntry
   - hash:
       serializedVersion: 2
       Hash: 8617aadb248da95f2695ca5669494400
@@ -467,6 +497,12 @@ ScriptsOnlyBuild:
     className: UnityOnDropdownValueChangedMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 0cf91ca6dc0f6676b1464696fad34a56
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerMovement
+  - hash:
+      serializedVersion: 2
       Hash: cf95add559be53ae8bfdfcea86c5a18f
     assemblyName: Mirror.dll
     namespaceName: Mirror
@@ -557,6 +593,12 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
+      Hash: 9a4039ec663eae5a01ef586e8f340dd8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LobbiesListManager
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -623,7 +665,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: cab36b7ef8cfacf16e50c841b2798fe1
+      Hash: 2c4c4ae90b9ef16ae805e9087f5dbf8e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SteamLobby
@@ -1275,12 +1317,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 0cf91ca6dc0f6676b1464696fad34a56
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerMovement
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

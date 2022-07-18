@@ -50,7 +50,7 @@ public class SteamLobby : MonoBehaviour
 
     public void HostLobby() 
     {
-        SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, manager.maxConnections);
+        SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, manager.maxConnections);
     }
 
     private void OnLobbyCreated(LobbyCreated_t callback)
@@ -106,7 +106,16 @@ public class SteamLobby : MonoBehaviour
 
     void OnGetLobbyList(LobbyMatchList_t result)
     {
-        
+        if(LobbiesListManager.Instance.listOfLobbies.Count > 0){
+            LobbiesListManager.Instance.DestroyLobbies();
+        }
+
+        for (int i = 0; i < result.m_nLobbiesMatching; i++)
+        {
+            CSteamID lobbyID = SteamMatchmaking.GetLobbyByIndex(i);
+            lobbyIDs.Add(lobbyID);
+            SteamMatchmaking.RequestLobbyData(lobbyID);
+        }
     }
 
     void OnGetLobbyData(LobbyDataUpdate_t result)
