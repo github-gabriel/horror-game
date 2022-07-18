@@ -4,6 +4,7 @@ using UnityEngine;
 using Mirror;
 using Steamworks;
 using UnityEngine.SceneManagement;
+
 public class CustomNetworkManager : NetworkManager
 {
     [SerializeField] private PlayerController GamePlayerPrefab;
@@ -21,6 +22,11 @@ public class CustomNetworkManager : NetworkManager
                     GamePlayers.Count);
             NetworkServer.AddPlayerForConnection(conn, GamePlayerInstance.gameObject);
         }
+    }
+
+    public void StartGame(string SceneName)
+    {
+        ServerChangeScene(SceneName);
     }
     
 }

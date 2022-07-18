@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,15 @@ public class PlayerController : NetworkBehaviour // NetworkBehaviour -> Sync pla
     [SyncVar(hook = nameof(PlayerNameUpdate))] // Function will be called when value changes
     public string PlayerName;
 
+    [SyncVar(hook = nameof(PlayerReadyUpdate))]
+    public bool Ready;
+    
     private CustomNetworkManager manager;
+
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     private CustomNetworkManager Manager
     {
@@ -30,6 +39,33 @@ public class PlayerController : NetworkBehaviour // NetworkBehaviour -> Sync pla
         }
     }
 
+    private void PlayerReadyUpdate(bool oldValue, bool mewValue)
+    {
+        if (isServer)
+        {
+            this.Ready = mewValue;
+        }
+
+        if (isClient)
+        {
+            LobbyController.Instance.UpdatePlayerList();
+        }
+    }
+
+    [Command]
+    private void CmdSetPlayerReady()
+    {
+        this.PlayerReadyUpdate(this.Ready, !this.Ready);
+    }
+
+    public void ChangeReady()
+    {
+        if (hasAuthority)
+        {
+            CmdSetPlayerReady();
+        }
+    }
+    
     public override void OnStartAuthority()
     {
         CmdSetPlayerName(SteamFriends.GetPersonaName().ToString());
@@ -69,5 +105,21 @@ public class PlayerController : NetworkBehaviour // NetworkBehaviour -> Sync pla
             LobbyController.Instance.UpdatePlayerList();
         }
     }
+    
+    // Start Game
 
+    public void CanStartGame(string SceneName)
+    {
+        if (hasAuthority)
+        {
+            CmdCanStartGame(SceneName);
+        }
+    }
+    
+    [Command]
+    public void CmdCanStartGame(string SceneName)
+    {
+        manager.StartGame(SceneName);
+    }
+    
 }

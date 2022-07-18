@@ -5,7 +5,10 @@ ScriptsOnlyBuild:
     - LobbyController
     - PlayerController
     - PlayerListItem
+    - PlayerMovement
     - SteamLobby
+    Mirror.Components.dll:
+    - Mirror.NetworkTransform
     Mirror.dll:
     - Mirror.FizzySteam.FizzySteamworks
     - Mirror.NetworkIdentity
@@ -51,7 +54,46 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: SteamLobby
     methodName: HostLobby
+  - assembly: Assembly-CSharp
+    fullTypeName: LobbyController
+    methodName: StartGame
+  - assembly: Assembly-CSharp
+    fullTypeName: LobbyController
+    methodName: ReadyPlayer
   sceneClasses:
+    Assets/Scenes/Game.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
     Assets/Scenes/Lobby.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -83,6 +125,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2954}
     - Class: 114
       Script: {instanceID: 3206}
+    - Class: 114
+      Script: {instanceID: 3282}
     - Class: 114
       Script: {instanceID: 3498}
     - Class: 114
@@ -126,7 +170,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
@@ -163,10 +213,16 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7800}
     - Class: 114
+      Script: {instanceID: 8156}
+    - Class: 114
       Script: {instanceID: 8404}
+    - Class: 114
+      Script: {instanceID: 36922}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -417,7 +473,7 @@ ScriptsOnlyBuild:
     className: MultiplexTransport
   - hash:
       serializedVersion: 2
-      Hash: 990023c411134c9508a19cdb20970f77
+      Hash: 48c28bfeb751fd217de507ef641d50b5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerListItem
@@ -909,7 +965,7 @@ ScriptsOnlyBuild:
     className: NetworkMatch
   - hash:
       serializedVersion: 2
-      Hash: ab30f33d586c75218407ae243bb25de9
+      Hash: ba24c1196b8791de5d8a5e5a9a113d6d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LobbyController
@@ -1179,7 +1235,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: de77c8bfdcc17bace5d2d1a49714a41b
+      Hash: 37a274472f9a6f01b96ae8a5b2eb58fb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1219,9 +1275,16 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 0cf91ca6dc0f6676b1464696fad34a56
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerMovement
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Lobby.unity
+  - Assets/Scenes/Game.unity
   playerPath: D:/Windows/Desktop/horror-game/Horror Game Steam/build/Horror Game
     Steam.exe

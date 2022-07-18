@@ -386,10 +386,13 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/where-allocations.ref.dll"
+"Assets/LobbiesListManager.cs"
 "Assets/Scripts/CustomNetworkManager.cs"
 "Assets/Scripts/LobbyController.cs"
+"Assets/Scripts/LobbyDataEntry.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PlayerListItem.cs"
+"Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/SteamLobby.cs"
 -langversion:9.0
 

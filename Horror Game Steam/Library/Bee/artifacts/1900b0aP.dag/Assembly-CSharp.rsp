@@ -346,6 +346,7 @@
 "Assets/Scripts/LobbyController.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PlayerListItem.cs"
+"Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/SteamLobby.cs"
 -langversion:9.0
 
