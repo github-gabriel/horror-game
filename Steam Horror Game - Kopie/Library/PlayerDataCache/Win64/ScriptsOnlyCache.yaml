@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CustomNetworkManager
+    - Flashlight
     - LobbiesListManager
     - LobbyController
     - LobbyDataEntry
@@ -125,6 +126,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 91
@@ -136,49 +141,51 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1538}
+      Script: {instanceID: 2572}
     - Class: 114
-      Script: {instanceID: 2390}
+      Script: {instanceID: 3374}
     - Class: 114
-      Script: {instanceID: 2718}
+      Script: {instanceID: 3702}
     - Class: 114
-      Script: {instanceID: 2956}
+      Script: {instanceID: 3940}
     - Class: 114
-      Script: {instanceID: 3174}
+      Script: {instanceID: 4158}
     - Class: 114
-      Script: {instanceID: 3210}
+      Script: {instanceID: 4194}
     - Class: 114
-      Script: {instanceID: 3286}
+      Script: {instanceID: 4270}
     - Class: 114
-      Script: {instanceID: 3502}
+      Script: {instanceID: 4486}
     - Class: 114
-      Script: {instanceID: 4186}
+      Script: {instanceID: 5170}
     - Class: 114
-      Script: {instanceID: 4290}
+      Script: {instanceID: 5274}
     - Class: 114
-      Script: {instanceID: 4712}
+      Script: {instanceID: 5694}
     - Class: 114
-      Script: {instanceID: 4896}
+      Script: {instanceID: 5876}
     - Class: 114
-      Script: {instanceID: 5586}
+      Script: {instanceID: 6566}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 6828}
     - Class: 114
-      Script: {instanceID: 6204}
+      Script: {instanceID: 7184}
     - Class: 114
-      Script: {instanceID: 6404}
+      Script: {instanceID: 7384}
     - Class: 114
-      Script: {instanceID: 6748}
+      Script: {instanceID: 7726}
     - Class: 114
-      Script: {instanceID: 6760}
+      Script: {instanceID: 7738}
     - Class: 114
-      Script: {instanceID: 7226}
+      Script: {instanceID: 8202}
     - Class: 114
-      Script: {instanceID: 7962}
+      Script: {instanceID: 8936}
     - Class: 114
-      Script: {instanceID: 8166}
+      Script: {instanceID: 9140}
     - Class: 114
-      Script: {instanceID: 8414}
+      Script: {instanceID: 9388}
+    - Class: 114
+      Script: {instanceID: 30430}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -218,6 +225,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 91
@@ -229,55 +240,57 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1538}
+      Script: {instanceID: 2572}
     - Class: 114
-      Script: {instanceID: 1858}
+      Script: {instanceID: 2844}
     - Class: 114
-      Script: {instanceID: 2718}
+      Script: {instanceID: 3702}
     - Class: 114
-      Script: {instanceID: 2956}
+      Script: {instanceID: 3940}
     - Class: 114
-      Script: {instanceID: 3174}
+      Script: {instanceID: 4158}
     - Class: 114
-      Script: {instanceID: 3286}
+      Script: {instanceID: 4270}
     - Class: 114
-      Script: {instanceID: 3502}
+      Script: {instanceID: 4486}
     - Class: 114
-      Script: {instanceID: 3652}
+      Script: {instanceID: 4636}
     - Class: 114
-      Script: {instanceID: 3700}
+      Script: {instanceID: 4684}
     - Class: 114
-      Script: {instanceID: 4166}
+      Script: {instanceID: 5150}
     - Class: 114
-      Script: {instanceID: 4186}
+      Script: {instanceID: 5170}
     - Class: 114
-      Script: {instanceID: 4290}
+      Script: {instanceID: 5274}
     - Class: 114
-      Script: {instanceID: 4712}
+      Script: {instanceID: 5694}
     - Class: 114
-      Script: {instanceID: 4896}
+      Script: {instanceID: 5876}
     - Class: 114
-      Script: {instanceID: 5586}
+      Script: {instanceID: 6566}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 6828}
     - Class: 114
-      Script: {instanceID: 6204}
+      Script: {instanceID: 7184}
     - Class: 114
-      Script: {instanceID: 6748}
+      Script: {instanceID: 7726}
     - Class: 114
-      Script: {instanceID: 6760}
+      Script: {instanceID: 7738}
     - Class: 114
-      Script: {instanceID: 7226}
-    - Class: 114
-      Script: {instanceID: 7438}
-    - Class: 114
-      Script: {instanceID: 7810}
-    - Class: 114
-      Script: {instanceID: 7962}
-    - Class: 114
-      Script: {instanceID: 8166}
+      Script: {instanceID: 8202}
     - Class: 114
       Script: {instanceID: 8414}
+    - Class: 114
+      Script: {instanceID: 8784}
+    - Class: 114
+      Script: {instanceID: 8936}
+    - Class: 114
+      Script: {instanceID: 9140}
+    - Class: 114
+      Script: {instanceID: 9388}
+    - Class: 114
+      Script: {instanceID: 30430}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -301,16 +314,16 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: a6e561615949734e9f12f9b61661f43e
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UIElements
     className: PanelRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: a6e561615949734e9f12f9b61661f43e
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
   - hash:
       serializedVersion: 2
       Hash: 681b5f9be6f57e5a7b20908e503986d3
@@ -1367,10 +1380,16 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 731f080b7997124a747b24bdceb87158
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Flashlight
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Lobby.unity
   - Assets/Scenes/Game.unity
-  playerPath: D:/Windows/Desktop/horror-game/Steam Horror Game - Kopie/build/Horror
+  playerPath: C:/Users/fortn/Documents/GitHub/horror-game/Steam Horror Game - Kopie/build/Horror
     Game Steam.exe
