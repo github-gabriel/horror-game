@@ -19,11 +19,43 @@ public class PlayerController : NetworkBehaviour // NetworkBehaviour -> Sync pla
     [SyncVar(hook = nameof(PlayerReadyUpdate))]
     public bool Ready;
     
+    // Flashlight: https://forum.unity.com/threads/solved-with-example-sync-globallight-and-personal-flashlight-over-the-network.484524/
+    
+    [SerializeField] private Light FlashLight;
+    [SyncVar] private bool LightState;
+
     private CustomNetworkManager manager;
 
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Update()
+    {
+        GetLightValue ();
+        if (Input.GetButtonDown("F"))
+        {
+               
+            if (isLocalPlayer == true)
+            {
+                bool ChangState = !LightState;                  
+                Debug.Log(LightState);
+                CmdSendLightValue(ChangState);
+            }
+        }
+    }
+    
+    private void GetLightValue()
+    {
+        FlashLight.enabled = LightState;
+    }
+    
+    [Command]
+    private void CmdSendLightValue(bool ChangState)
+    {
+        LightState = ChangState;
+        Debug.Log("Switched the FlashLight state.");
     }
 
     private CustomNetworkManager Manager

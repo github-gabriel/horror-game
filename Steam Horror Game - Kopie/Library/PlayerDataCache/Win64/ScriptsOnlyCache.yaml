@@ -2,7 +2,6 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CustomNetworkManager
-    - Flashlight
     - LobbiesListManager
     - LobbyController
     - LobbyDataEntry
@@ -163,29 +162,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5694}
     - Class: 114
-      Script: {instanceID: 5876}
+      Script: {instanceID: 5878}
     - Class: 114
-      Script: {instanceID: 6566}
+      Script: {instanceID: 6568}
     - Class: 114
-      Script: {instanceID: 6828}
+      Script: {instanceID: 6830}
     - Class: 114
-      Script: {instanceID: 7184}
+      Script: {instanceID: 7186}
     - Class: 114
-      Script: {instanceID: 7384}
+      Script: {instanceID: 7386}
     - Class: 114
-      Script: {instanceID: 7726}
+      Script: {instanceID: 7728}
     - Class: 114
-      Script: {instanceID: 7738}
+      Script: {instanceID: 7740}
     - Class: 114
-      Script: {instanceID: 8202}
+      Script: {instanceID: 8204}
     - Class: 114
-      Script: {instanceID: 8936}
+      Script: {instanceID: 8938}
     - Class: 114
-      Script: {instanceID: 9140}
+      Script: {instanceID: 9142}
     - Class: 114
-      Script: {instanceID: 9388}
-    - Class: 114
-      Script: {instanceID: 30430}
+      Script: {instanceID: 9390}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -266,31 +263,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5694}
     - Class: 114
-      Script: {instanceID: 5876}
+      Script: {instanceID: 5878}
     - Class: 114
-      Script: {instanceID: 6566}
+      Script: {instanceID: 6568}
     - Class: 114
-      Script: {instanceID: 6828}
+      Script: {instanceID: 6830}
     - Class: 114
-      Script: {instanceID: 7184}
+      Script: {instanceID: 7186}
     - Class: 114
-      Script: {instanceID: 7726}
+      Script: {instanceID: 7728}
     - Class: 114
-      Script: {instanceID: 7738}
+      Script: {instanceID: 7740}
     - Class: 114
-      Script: {instanceID: 8202}
+      Script: {instanceID: 8204}
     - Class: 114
-      Script: {instanceID: 8414}
+      Script: {instanceID: 8416}
     - Class: 114
-      Script: {instanceID: 8784}
+      Script: {instanceID: 8786}
     - Class: 114
-      Script: {instanceID: 8936}
+      Script: {instanceID: 8938}
     - Class: 114
-      Script: {instanceID: 9140}
+      Script: {instanceID: 9142}
     - Class: 114
-      Script: {instanceID: 9388}
-    - Class: 114
-      Script: {instanceID: 30430}
+      Script: {instanceID: 9390}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -842,6 +837,12 @@ ScriptsOnlyBuild:
     className: NetworkRoomManager
   - hash:
       serializedVersion: 2
+      Hash: 4d185f7cbe12c215df3604873b5312cb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Flashlight
+  - hash:
+      serializedVersion: 2
       Hash: 28f0b7dc4aa4a32304979bbc0342c3c3
     assemblyName: Mirror.dll
     namespaceName: Mirror
@@ -1340,7 +1341,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 37a274472f9a6f01b96ae8a5b2eb58fb
+      Hash: 8098d05ae43f2b9f268499f30867af36
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1380,16 +1381,10 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 731f080b7997124a747b24bdceb87158
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Flashlight
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Lobby.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/fortn/Documents/GitHub/horror-game/Steam Horror Game - Kopie/build/Horror
+  playerPath: D:/Windows/Desktop/horror-game/Steam Horror Game - Kopie/build/Horror
     Game Steam.exe

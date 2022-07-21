@@ -10,29 +10,27 @@ public class Flashlight : NetworkBehaviour
     public AudioSource turnOn;
     public AudioSource turnOff;
 
-    public bool on;
-    public bool off;
-    
+    private bool active;
+    private bool activeSync;
+
     void Start()
     {
-        off = true;
-        flashlight.SetActive(false);
+        active = false;
+        flashlight.SetActive(active);
     }
     void Update()
     {
-        if(off && Input.GetButtonDown("F"))
+        if(!active && Input.GetButtonDown("F"))
         {
-            flashlight.SetActive(true);
-            turnOn.Play();
-            off = false;
-            on = true;
+            active = !active;
         }
-        else if (on && Input.GetButtonDown("F"))
+        else if (active && Input.GetButtonDown("F"))
         {
-            flashlight.SetActive(false);
-            turnOff.Play();
-            off = true;
-            on = false;
+            active = !active;
         }
+
+        activeSync = active;
+        
+        flashlight.SetActive(active);
     }
 }
