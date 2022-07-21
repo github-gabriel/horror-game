@@ -2,6 +2,10 @@
 
 ## Die ersten Geh-Animationen
 https://user-images.githubusercontent.com/92476790/180279099-23e0d66b-345a-4d08-872b-305bd3471f95.mp4
+
+Simple Geh Animation mit 5 verschiedenen Animationen.
+Das Script fragt nach den Inputs ab und spielt je nach Situation die Animation ab.
+
 ## Der erste Multiplayer mit synchronisierten Animationen
 https://user-images.githubusercontent.com/92476790/180279115-07608b65-ed16-4ecb-87d8-97f22172e493.mp4
 
